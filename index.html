@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>price: <span id="price">500</span></h3>
+    <P>If put the Couppon will get 10% discount</P>
+    
+    <input type="text" name="" id="text-input">
+    <button id="click">click</button>
+    <p>couppon code <span>ASAMONI</span></p>
+    <div id="total-price"></div>
+</body>
+<script>
+    
+document.getElementById("click").addEventListener("click",function(){
+
+    const textInputValue=document.getElementById("text-input").value;
+    if(textInputValue === 'ASAMONI'){
+       
+        const priceValue = document.getElementById("price").innerText;
+         const discount =priceValue*10/100
+         const currentPrice=priceValue-discount 
+         console.log(currentPrice);
+         const setPrice=document.createElement("div")
+         setPrice.innerHTML=`
+         <p> Discounted Price= ${currentPrice}</p>
+        
+         `
+       document.getElementById("total-price").appendChild(setPrice)
+    }else{
+        alert('opps!>>>>>>>>>>worong')
+    }
+})
+</script>
+</html>

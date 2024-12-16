@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Counter: <span id="counter">0</span></h1>
+    <button id="subhalallah">Subhalallah</button>
+    <button id="alhamdulillah">Alhamdulillah</button>
+    <button id="allahuakbar" onclick="handleClick()">Allhuakbar</button>
+</body>
+<script>
+    let sum=0
+    const subhalallahBtn = document.getElementById("subhalallah")
+    const alhamdulillahBtn = document.getElementById("alhamdulillah")
+    const allahuakbarBtn = document.getElementById("allahuakbar")
+    let counter=document.getElementById("counter")
+    subhalallahBtn.addEventListener("click",function(){
+        sum++
+         counter.textContent=sum
+ 
+        if(sum ===3){
+            alert("stop now");
+            subhalallahBtn.disabled = true
+        }
+    })
+    // Alhamdulillah
+    alhamdulillahBtn.addEventListener("click",function(){
+        sum++
+        counter.textContent=sum
+        if(sum===3){
+            alert("You reached limit")
+            alhamdulillahBtn.disabled=true  
+        }
+    })
+    function handleClick(){
+        sum++
+        counter.textContent=sum
+        if(sum===3){
+            alert("You reached limit")
+            allahuakbarBtn.disabled=true  
+        }
+    }
+</script>
+</html>
